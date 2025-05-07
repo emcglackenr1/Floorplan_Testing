@@ -5,3 +5,5 @@ Based on the Codepen Home floorplan mockup for home assistant by Andy Fitzsimon:
 
 ## Original version: ##
 ![image](https://github.com/user-attachments/assets/da375c09-e9d1-4ba1-8537-ebd454d06be1)
+
+## Testing ##
