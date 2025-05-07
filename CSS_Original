@@ -1,0 +1,279 @@
+  * {box-sizing: border-box;}
+
+#floor + label{transform: none;
+   }
+
+
+#floor + label:after{content:""; display:block; position:absolute; width: 30vw; height:1vh; background-color: currentcolor;  top:16vh; left: 0vw; transition: all .5s ease;}
+
+
+
+#kitchen + label{left: 30vw !important;  top:0;} 
+
+
+
+#floor:checked + label:after{top: 1vh;}
+
+body {
+  overflow:hidden;
+  background-color: #162738;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  display: block;
+  height: 100vh;
+  top: 0;
+  left: 30vw;
+  position: absolute;
+  width: 70vw;
+}
+
+text {
+  font-size: 3px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  fill: currentcolor;
+  font-weight: 300;
+}
+
+label {
+  position: absolute;
+  transition: 0.3s ease;
+  z-index: 9;
+  cursor: pointer;
+  display: block;
+  height: 18vh;
+  line-height: 20vh;
+  width: 30vw;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+g {
+  transition: all 0.5s ease;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+.downstairs {
+  opacity: 1;
+}
+.upstairs {
+  opacity: 0;
+}
+
+input + label {
+  transform: scale(0.96) translate(-1em, 0);
+  transition: 0.3s ease;
+}
+
+label {
+  padding: 0 ; padding-left: 8vw;
+  whitespace: nowrap;
+  font-size: 1rem;
+  
+  letter-spacing: 0.1em;
+}
+input:checked + label {
+  background-color: #fff;
+  color: #345;
+  transform: scale(1);
+  box-shadow: inset 0 0 0 0.1em #fff;
+}
+
+#floor:checked ~ svg .upstairs,
+#floor:checked ~ svg .upstairs .wall,
+#floor:not(:checked) ~ svg .downstairs .wall {
+  animation: drawin 1s cubic-bezier(0.7, 0.4, 0.2, 0.1) forwards;
+}
+
+#floor:checked ~ svg .downstairs {
+  opacity: 0;
+}
+.barrier,
+.wall {
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 0.4px;
+  opacity: 0.6;
+}
+
+.barrier {
+  opacity: 0.3;
+  stroke-width: 0.2px;
+  stroke-dasharray: 0 200 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+    0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+    0.2 0.75 0.2 0.75 0.2;
+  stroke-dashoffset: 200;
+
+  transition: all .8s ease 0s;
+}
+
+#floor:checked ~ svg .downstairs .barrier {
+  stroke-dashoffset: 0;
+}
+#floor:not(:checked) ~ svg .upstairs .barrier {
+  stroke-dashoffset: 0;
+}
+
+.roof ,
+.garden  {
+  transform-origin: 50px 50px;
+}
+
+#floor:not(:checked) ~ svg .upstairs .roof  {
+  transform: scale(1.1);
+}
+
+#floor:checked ~ svg .downstairs .garden  {
+  transform: scale(0.95);
+}
+
+#floor:not(:checked) ~ svg .downstairs .garden ,
+#floor:checked ~ svg .upstairs .roof  {
+  transform: scale(1);
+  transition: all 1s ease;
+}
+
+@keyframes drawin {
+  0% {
+    stroke-dasharray: 0 100;
+    opacity: 0;
+  }
+
+  10% {
+    stroke-dasharray: 0 100;
+  }
+
+  100% {
+    stroke-dasharray: 100 0;
+    opacity: 1;
+  }
+}
+
+.north,
+.south,
+.east,
+.west,
+.south-west {
+  fill: currentcolor;
+}
+.west {
+  opacity: 0.2;
+}
+.north {
+  opacity: 0.3;
+}
+.south {
+  opacity: 0.05;
+}
+.east {
+  opacity: 0.1;
+}
+.south-west {
+  opacity: 0.15;
+}
+
+label[for="floor"] {
+  top: 0;
+}
+label[for="sensors"] {
+  top: 20vh;
+}
+label[for="lights"] {
+  top: 40vh;
+}
+label[for="media"] {
+  top: 60vh;
+}
+label[for="cameras"] {
+  top: 80vh;
+}
+
+/*not finished yet*/
+
+
+label[for="cameras"] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+text{transition: all 1.5s ease; }
+
+#floor:checked ~ svg {
+  .upstairs text{transform: none; opacity:1}
+  .downstairs text{transform: translate(5px); opacity:0}
+}
+
+#floor:not(:checked) ~ svg {
+  .downstairs text{transform: none; opacity:1}
+  .upstairs text{transform: translate(-5px); opacity:0}
+}
+
+
+
+.sensors circle{fill:currentcolor; fill-opacity:.76; stroke:currentcolor; stroke-width:0px ; stroke-opacity:1;  transition: all .3s ease .2s;}
+.sensors .open{color:#6e9 ;  stroke-width: 2.5px}
+#sensors:checked ~ svg .sensors {opacity:1;}
+#sensors:not(:checked) ~ svg .sensors{opacity:0}
+.sensors text{color:#6Ce; }
+#sensors:checked ~ svg .sensors{
+  opacity:1;  
+  text{transform:none ; transition:none;
+  }
+}
+
+.sensors .closed{fill-opacity:.05; stroke-width:.3px; color:#6e9}
+
+
+#lights:not(:checked) ~ svg .lights use{opacity:0; transform: scale(.97);}
+#lights:checked ~ svg .lights use{opacity:1;}
+.lights use{transition: all .3s cubic-bezier(.5,.2,.2,1.5); transform-origin: 50% 50%;}
+.lights use:nth-child(2n){transition-delay:.2s;}
+.lights use:nth-child(3n){transition-delay:.3s;}
+.lights use:nth-child(4n){transition-delay:.1s;}
+.lights use:nth-child(5n){transition-delay:.0s;}
+.lights use.on{ color:#da0;}
+.lights use{color:#aaa;}
+.lights use.off{ color:#456;}
+
+
+
+
+.media use{transition: all .3s cubic-bezier(.5,.2,.2,1.5); transform-origin: 50% 50%;}
+#media:not(:checked) ~ svg .media use{opacity:0; transform: scale(.97);}
+#media:checked ~ svg .media use{opacity:1;}
+.media use:nth-child(2n){transition-delay:.2s;}
+.media use:nth-child(3n){transition-delay:.3s;}
+.media use:nth-child(4n){transition-delay:.1s;}
+.media use:nth-child(5n){transition-delay:.0s;}
+
+
+svg{transition: all .5s ease}
+
+#kitchen:checked ~ svg{transform: translate(0%, -13%) scale(2) ; opacity:.5;}
+
+
+.shade{position:absolute; top:0; left:0; width:30vw; bottom:0; background-color:rgba(5,15,25,0.75); height: 100vh;}
